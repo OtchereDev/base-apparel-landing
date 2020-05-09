@@ -1,0 +1,180 @@
+/*## Colors
+
+### Primary
+
+- Desaturated Red: hsl(0, 36%, 70%)
+- Soft Red: hsl(0, 93%, 68%)
+
+### Neutral
+
+- Dark Grayish Red: hsl(0, 6%, 24%)
+
+### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+*/
+
+
+/* variable*/
+
+:root {
+    --Desaturated-red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --first-grad: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --second-grad: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+
+/*reset*/
+
+body,
+p,
+a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+/* base style*/
+
+input::placeholder {
+    color: var(--Dark-Grayish-Red);
+    font-size: 13px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/*fonts*/
+
+html {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--first-grad);
+}
+
+.content {
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 3.5rem;
+    color: var(--Dark-Grayish-Red);
+    font-weight: 700;
+    letter-spacing: 15px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 16px;
+    color: var(--Desaturated-red);
+    width: 70%;
+    margin: auto;
+    line-height: 25px;
+}
+
+span {
+    color: var(--Desaturated-red);
+    font-weight: 300;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    overflow: hidden;
+    margin: 10% auto 20% auto;
+}
+
+input {
+    padding: 17px;
+    border: 1px solid var(--Desaturated-red);
+    border-radius: 30px;
+    width: 90%;
+    grid-column: 3/11;
+    grid-row: 1;
+}
+
+button {
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: 1px none;
+    box-shadow: -8px -5px 50px hsl(0, 74%, 74%);
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    grid-column: 10/12;
+    grid-row: 1;
+    cursor: pointer;
+}
+
+
+/*mobile styles*/
+
+nav {
+    padding: 20px 20px 20px 40px;
+}
+
+.img-cont {
+    width: 100%;
+    height: 300px;
+    background: url(images/hero-mobile.jpg);
+    background-size: 100%;
+}
+
+
+/*laptops style*/
+
+@media screen and (min-width:960px) {
+    .grid-box {
+        display: grid;
+        grid-template-columns: 60% 40%;
+    }
+    .img-cont {
+        background: url(images/hero-desktop.jpg);
+        height: 100%;
+        background-size: cover;
+        grid-row: 1/3;
+        grid-column: 2/3;
+    }
+    .content {
+        background: url(images/bg-pattern-desktop.svg);
+        background-size: cover;
+        text-align: left;
+    }
+    .content h2 {
+        margin-left: 20%;
+        font-size: 5rem;
+    }
+    .content p {
+        margin-left: 20%;
+        width: 55%;
+        font-size: 1.5rem;
+    }
+    nav {
+        background: url(images/bg-pattern-desktop.svg);
+        background-size: cover;
+        padding-left: 20%;
+        padding-top: 7%;
+    }
+    .form {
+        grid-template-columns: repeat(20, 1fr);
+    }
+    input {
+        grid-column: 5/15;
+        padding-left: 10%;
+    }
+    button {
+        grid-column: 14/16;
+    }
+}
