@@ -113,7 +113,7 @@ button {
     border-radius: 25px;
     width: 100%;
     text-align: center;
-    grid-column: 10/12;
+    grid-column: 10/13;
     grid-row: 1;
     cursor: pointer;
 }
